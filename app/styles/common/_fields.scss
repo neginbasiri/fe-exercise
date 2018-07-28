@@ -1,0 +1,12 @@
+label{
+  color: $grey-dark;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+input{
+  border: 1px solid $border-color;
+  border-radius: $base-radius;
+  padding: $padding-sm;
+  height: $fields-height;
+}

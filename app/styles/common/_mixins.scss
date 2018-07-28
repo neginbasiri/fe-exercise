@@ -1,0 +1,27 @@
+@mixin background-image-cover {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin gradient-overlay($opacity: 0.1) {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, transparent, $black);
+        opacity: $opacity;
+    }
+}
+
+@mixin align-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+

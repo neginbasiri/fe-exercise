@@ -1,0 +1,23 @@
+// Base styles
+html {
+  font-family: 'LatoWebBlack';
+  font-size: $base-font-size;
+	box-sizing: border-box;
+	height: 100%;
+	line-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	margin: 0;
+  padding: 0;
+  background-color: $body-bg-color;
+  color: $body-text-color;
+}
