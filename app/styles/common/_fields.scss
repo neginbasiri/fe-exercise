@@ -1,7 +1,13 @@
+.field--item{
+  display: flex;
+  flex-direction: column;
+}
+
 label{
   color: $grey-dark;
   font-size: 1.4rem;
   font-weight: 600;
+  margin-bottom: $margin-md;
 }
 
 input{

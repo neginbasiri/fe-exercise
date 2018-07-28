@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
 import InputFields from './fields/InputField';
+// import SelectField from './fields/SelectField';
 
 
-const Filters = () => <div className="filters--wrapper">
-  <InputFields labelText="Keyword"/>
-</div>;
+export default class Filters extends Component {
 
-export default Filters;
+  constructor(props){
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  render(){
+    return (<div className="filters--wrapper">
+    <InputFields labelText="Keyword"/>
+    {/* <SelectField labelText="Launch Pad" options={}/>
+    <SelectField labelText="Min Year" options={}/>
+    <SelectField labelText="Max Year" options={}/> */}
+  </div>);
+  }
+}

@@ -1,7 +1,7 @@
 // Base styles
 html {
   font-family: 'LatoWebBlack';
-  font-size: $base-font-size;
+	font-size: $base-font-size;
 	box-sizing: border-box;
 	height: 100%;
 	line-height: 100%;
@@ -20,4 +20,14 @@ body {
   padding: 0;
   background-color: $body-bg-color;
   color: $body-text-color;
+}
+
+.content-wrapper{
+	position: relative;
+	max-width: $content-width;
+	margin: 0 auto;
+}
+
+.text-center{
+	text-align: center;
 }

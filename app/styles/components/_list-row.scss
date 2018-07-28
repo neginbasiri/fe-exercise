@@ -1,0 +1,31 @@
+.list-row {
+    display: flex;
+    // flex: 1;
+    padding: $padding-lg;
+    border-bottom: 1px solid $border-color;
+}
+
+.list-row--image {
+    width: 100px;
+    height: 100px;
+}
+
+.list-row--text {
+    display: flex;
+    flex-flow: column wrap;
+    padding: $padding-md;
+}
+
+.list-row--title {
+    padding-bottom: $padding-md;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+}
+
+.list-row--sub-title {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    $color: $grey;
+    font-weight: medium;
+}
