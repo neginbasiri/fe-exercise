@@ -42,25 +42,25 @@ export default class FilteredListContainer extends Component {
 			case 'keyword':
 				filteredList = launches.filter(launch => this.filterByKeyword(launch, value));
 				!value
-					? this.setState({ selectedKeyword: '', filteredList: this.state.launches })
+					? this.setState({ selectedKeyword: '', filteredList })
 					: this.setState({ selectedKeyword: value, filteredList });
 				break;
 			case 'launch pad name':
 				filteredList = launches.filter(launch => this.filterByLaunch(launch, value));
 				!value
-					? this.setState({ selectedLaunchPad: '', filteredList: this.state.launches })
+					? this.setState({ selectedLaunchPad: '', filteredList })
 					: this.setState({ selectedLaunchPad: value, filteredList });
 				break;
 			case 'min year':
 				filteredList = launches.filter(launch => this.filterByMinYear(launch, value));
 				!value
-					? this.setState({ selectedMinYear: '', filteredList: this.state.launches })
+					? this.setState({ selectedMinYear: '', filteredList })
 					: this.setState({ selectedMinYear: value, filteredList });
 				break;
 			case 'max year':
 				filteredList = launches.filter(launch => this.filterByMaxYear(launch, value));
 				!value
-					? this.setState({ selectedMaxYear: '', filteredList: this.state.launches })
+					? this.setState({ selectedMaxYear: '', filteredList })
 					: this.setState({ selectedMaxYear: value, filteredList });
 				break;
 			default:
@@ -89,7 +89,7 @@ export default class FilteredListContainer extends Component {
 		const { rocket_name } = rocket;
 		const payload_id = payloads.length > 0 ? payloads[0].payload_id : null;
 
-		return (
+		return !selectedKeyword ?  true : (
 			rocket_name.includes(selectedKeyword) ||
 			flight_number.toString() === selectedKeyword ||
 			payload_id.includes(selectedKeyword)
@@ -103,27 +103,19 @@ export default class FilteredListContainer extends Component {
 		const { launch_site } = launch;
 		const { site_id } = launch_site;
 
-		return matchedLaunchPads.find(launchPads => launchPads.id === site_id);
+		return !selectedLaunchPad ? true : matchedLaunchPads.find(launchPads => launchPads.id === site_id);
 	};
 
-	filterByMinYear = selectedMinYear => {
-		const filteredList = this.state.launches.filter(launch => {
-			const { launch_date_local } = launch;
+	filterByMinYear = (launch,selectedMinYear) => {
+		const { launch_date_local } = launch;
 
-			return Utils.getYear(launch_date_local) >= selectedMinYear;
-		});
-
-		return filteredList;
+		return !selectedMinYear ? true : Utils.getYear(launch_date_local) >= selectedMinYear;
 	};
 
-	filterByMaxYear = selectedMaxYear => {
-		const filteredList = this.state.launches.filter(launch => {
-			const { launch_date_local } = launch;
+	filterByMaxYear = (launch, selectedMaxYear) => {
+		const { launch_date_local } = launch;
 
-			return Utils.getYear(launch_date_local) <= selectedMaxYear;
-		});
-
-		return filteredList;
+		return !selectedMaxYear ? true : Utils.getYear(launch_date_local) <= selectedMaxYear;
 	};
 
 	render() {
