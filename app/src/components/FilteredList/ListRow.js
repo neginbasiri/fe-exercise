@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import LinkButtons from './LinkButtons';
+import { Utils } from '../../common';
 
 export default class ListRow extends Component {
-	constructor(props) {
-		super(props);
+	// constructor(props) {
+	// 	super(props);
 
-		this.state = {};
-	}
+	// 	this.state = {};
+	// }
+
+	findLaunchPadFullName = site_id => {
+		const { launchPads } = this.props;
+		const launchPad = launchPads.find(launchPad => launchPad.id === site_id);
+		return launchPad ? launchPad.full_name : null;
+	};
 
 	render() {
-		const { links, rocket, payloads, launch_date_local, flight_number } = this.props;
+		const { links, rocket, payloads, launch_date_local, flight_number, launch_site } = this.props;
 		const { mission_patch } = links;
 		const { rocket_name } = rocket;
-    const { payload_id } = payloads ? payloads[0] : '';
+		const payload_id = payloads.length > 0 ? payloads[0].payload_id : '';
+		const { site_id } = launch_site;
 
-		const date = new Date(launch_date_local).toLocaleDateString('en-GB', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
-		const time = new Date(launch_date_local).toLocaleTimeString('en-GB', {
-			hour: '2-digit',
-			minute: '2-digit',
-			hour12: true
-		});
 		return (
 			<div className="list-row">
 				<img className="list-row--image" src={mission_patch} alt="Mission" />
@@ -33,7 +31,7 @@ export default class ListRow extends Component {
 						{rocket_name} - {payload_id}
 					</div>
 					<div className="list-row--sub-title">
-						Launched on {date} at {time} from {}
+						Launched on {Utils.getDateString(launch_date_local)} at {Utils.getTimeString(launch_date_local)} from {this.findLaunchPadFullName(site_id)}
 					</div>
 					<div className="list-row--buttons">
 						<LinkButtons links={links} />
