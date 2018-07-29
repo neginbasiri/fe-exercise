@@ -24,7 +24,8 @@ export default class Filters extends Component {
 				<SelectField labelText="Launch Pad" options={Object.keys(launchPadNames).map( key => launchPadNames[key])} onInputChange={event => onInputChange('launch pad name', event.target.value)}/>
         <SelectField labelText="Min Year" options={[...new Set(launchDates)]} onInputChange={event => onInputChange('min year', event.target.value)}/>
         <SelectField labelText="Max Year" options={[...new Set(launchDates)]} onInputChange={event => onInputChange('max year', event.target.value)}/>
-        <button className="button" onClick={applyAllFilters}>Apply</button>
+				<button className="button button--green" onClick={applyAllFilters}>Apply</button>
+        
 			</div>
 		);
 	}

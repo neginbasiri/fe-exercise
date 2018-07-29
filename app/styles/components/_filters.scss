@@ -1,6 +1,17 @@
-.filters--wrapper{
-  background-color: $grey-lightest;
-  padding: $padding-lg;
-  display: flex;
+.filters--wrapper {
+    background-color: $grey-lightest;
+    padding: 0 $padding-lg $padding-lg;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+
+    > button{
+      margin-top: $margin-lg;
+    }
+
+    > .field--item, button {
+     // flex-grow: 1;
+     flex: 1 auto;
+    }
 
 }

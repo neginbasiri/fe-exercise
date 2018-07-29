@@ -120,7 +120,7 @@ export default class FilteredListContainer extends Component {
 
 	render() {
 		return (
-			<div className="container">
+			<div className="container" id="content-container">
 				<Filters
 					applyAllFilters={this.applyAllFilters}
 					onInputChange={this.onInputChange}

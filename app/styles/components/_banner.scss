@@ -2,29 +2,35 @@
   @include background-image-cover;
   @include gradient-overlay(0.5);
   position: relative;
-  background-image: url('../static/logo.png');
+  background-image: url('../../src/static/space-photo.jpeg');
   height: 500px;
 }
 
 .banner--title{
   @include align-center;
-  font-size: 4.8rem;
+  font-size: 38px;
   color: $white;
 }
 
 .banner--tag{
   padding: $base-padding;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 12px;
+  color: $white;
 
 }
 
 .banner--icon{
-  background: url('../static/down-chevron.svg') center no-repeat;
+  background: url('../../src/static/down-chevron.svg') center no-repeat;
   position: absolute;
   text-align: center;
   width: 100%;
   bottom: 3rem;
   font-size: 2rem;
   cursor: pointer;
+
+  > img{
+    width: 30px;
+    fill: $white;
+  }
 }

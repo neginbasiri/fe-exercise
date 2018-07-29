@@ -1,12 +1,14 @@
 .list--container{
-  // display: flex;
+  display: flex;
+  flex-direction: column;
   background-color: $white;
+
 }
 
 .list--result{
   text-align: center;
-  font-size: 1.6rem;
-  font-weight: 'medium';
+  font-family: 'latosemibold';
+  color: $grey;
+  font-size: 16px;
   padding: $padding-lg;
-  
 }

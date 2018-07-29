@@ -1,43 +1,43 @@
 .list-row {
     display: flex;
-
-    // flex: 1;
-    padding: $padding-lg;
+    flex-wrap: wrap;
+    padding: $padding-lg 0;
     border-bottom: 1px solid $border-color;
 }
 
 .list-row--image {
     width: 100px;
     height: 100px;
+    margin-left: $margin-lg;
 }
 
 .list-row--text {
     display: flex;
+    flex: 1 auto;
     flex-flow: column wrap;
-    padding-left: $padding-lg;
 }
 
 .list-row--title {
+    padding: 0 $padding-lg;
     padding-bottom: $padding-md;
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 1.8rem;
+    font-size: 16px;
+    font-family: 'latobold';
 }
 
+
 .list-row--sub-title {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-
-    $color: $grey-light;
-
+    padding: 0 $padding-lg;
+    color: $grey;
 
     span{
-        font-family: 'latosemibold';
+        font-family: 'latobold';
     }
 }
 
 .list-row--buttons {
     display: flex;
+    flex-wrap: wrap;
+    padding-left: $padding-lg;
     margin-top: $margin-lg;
 
     > .button{

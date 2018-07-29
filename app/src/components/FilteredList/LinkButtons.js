@@ -36,7 +36,7 @@ const LinkButtons = ({ links }) => {
 		if (link === 'mission_patch') return null;
 
 		return (
-			<a className="button" key={key} href={links[link]}>
+			<a className="button button--link" key={key} href={links[link]}>
 				{findButtonText(link)}
 			</a>
 		);

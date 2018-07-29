@@ -1,9 +1,18 @@
-.button{
-  background-color: $white;
-  border: 1px solid $border-color;
-  border-radius: $base-radius;
-  padding: $padding-sm $padding-md;
-  text-decoration: none;
-  color: $grey;
-  cursor: pointer;
+.button {
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $base-radius;
+    padding: $padding-sm calc(#{$padding-md} + 10px);
+    text-decoration: none;
+    color: $grey;
+    cursor: pointer;
+}
+
+.button--green {
+    color: $white;
+    background-color: $green;
+}
+
+.button--link {
+    font-size: 12px;
 }

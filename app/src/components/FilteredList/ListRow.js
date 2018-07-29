@@ -37,7 +37,7 @@ export default class ListRow extends Component {
 						<LinkButtons links={links} />
 					</div>
 				</div>
-				<div className="list-row--text">
+				<div className="list-row--number">
 					<div className="list-row--title text-center">#{flight_number}</div>
 					<div className="list-row--sub-title">Flight Number</div>
 				</div>
