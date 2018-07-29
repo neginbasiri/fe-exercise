@@ -1,8 +1,8 @@
 .field--item{
   display: flex;
   flex-direction: column;
-  margin-right: $margin-lg;
-  padding-top: $padding-lg;
+  margin: 0 $margin-lg $margin-lg $margin-lg;
+
 }
 
 label{

@@ -1,17 +1,15 @@
 .filters--wrapper {
     background-color: $grey-lightest;
-    padding: 0 $padding-lg $padding-lg;
+    padding: $padding-lg 0 0 0;
     display: flex;
     flex-flow: row wrap;
     align-items: flex-end;
 
-    > button{
-      margin-top: $margin-lg;
+    > button {
+        margin: 0 $margin-lg $margin-lg $margin-lg;
     }
 
     > .field--item, button {
-     // flex-grow: 1;
-     flex: 1 auto;
+        flex: 1 auto;
     }
-
 }
