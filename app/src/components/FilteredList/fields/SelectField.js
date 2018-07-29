@@ -5,9 +5,9 @@ const SelectField = ({ labelText, options, onInputChange }) => (
 		<label>{labelText}</label>
 		<select onChange={onInputChange}>
 			<option value="">Any</option>
-			{Object.keys(options).map(key => (
-				<option key={key} value={options[key]}>
-					{options[key]}
+			{options.map((option, key) => (
+				<option key={key} value={option}>
+					{option}
 				</option>
 			))}
 		</select>
