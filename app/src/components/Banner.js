@@ -1,16 +1,14 @@
 import React from 'react';
+import { Scroll } from '../common';
 import icon from '../static/down-chevron.svg';
 
-// const style = {
-//   backgroundImage: bannerImage
-// }
+const onIconClick = () => new Scroll('content-container');
 
 const Banner = () => <div className="banner--bg-img" alt="Space Background Image">
- {/* <img src={bannerImage} className="dd-logo" alt="" /> */}
   <div className="banner--tag">Space Savvy</div>
   <div className="banner--title">Discover Space Missions</div>
   <div className="banner--icon">
-    <img src={icon}/>
+    <img src={icon} onClick={onIconClick} alt="Icon"/>
   </div>
 </div>
 
