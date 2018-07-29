@@ -1,10 +1,6 @@
 // Base styles
 html {
-  font-family: 'latoblack';
-	font-size: $base-font-size;
-	box-sizing: border-box;
-	height: 100%;
-	line-height: 100%;
+
 }
 
 *,
@@ -14,20 +10,28 @@ html {
 }
 
 body {
-	position: relative;
-	min-height: 100%;
 	margin: 0;
-  padding: 0;
-  background-color: $body-bg-color;
+	padding:0;
+  background: {
+    position: center;
+    color: $body-bg-color;
+    repeat: no-repeat;
+    size: cover;
+  }
   color: $body-text-color;
+  font: {
+    family: $base-font;
+    size: $base-font-size;
+  }
+  line-height: $base-line-height;
 }
 
-.content-wrapper{
-	position: relative;
-	max-width: $content-width;
-	margin: 0 auto;
+.container {
+    position: relative;
+    max-width: $content-width;
+    margin: 0 auto;
 }
 
-.text-center{
-	text-align: center;
+.text-center {
+    text-align: center;
 }

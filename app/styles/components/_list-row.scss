@@ -28,9 +28,12 @@
     font-size: 1.4rem;
     line-height: 1.4rem;
 
-    $color: $grey;
+    $color: $grey-light;
 
-    font-weight: medium;
+
+    span{
+        font-family: 'latosemibold';
+    }
 }
 
 .list-row--buttons {

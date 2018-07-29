@@ -2,7 +2,7 @@
   @include background-image-cover;
   @include gradient-overlay(0.5);
   position: relative;
-  background-image: url('../../src/static/logo.png');
+  background-image: url('../static/logo.png');
   height: 500px;
 }
 
@@ -16,11 +16,11 @@
   padding: $base-padding;
   text-transform: uppercase;
   font-size: 1.4rem;
-  //color: $white;
+
 }
 
 .banner--icon{
-  background-image: url('../../src/static/down-chevron.svg');
+  background: url('../static/down-chevron.svg') center no-repeat;
   position: absolute;
   text-align: center;
   width: 100%;

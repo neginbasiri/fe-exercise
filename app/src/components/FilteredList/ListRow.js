@@ -31,7 +31,7 @@ export default class ListRow extends Component {
 						{rocket_name} - {payload_id}
 					</div>
 					<div className="list-row--sub-title">
-						Launched on {Utils.getDateString(launch_date_local)} at {Utils.getTimeString(launch_date_local)} from {this.findLaunchPadFullName(site_id)}
+						Launched on <span>{Utils.getDateString(launch_date_local)}</span> at <span>{Utils.getTimeString(launch_date_local)}</span> from <span>{this.findLaunchPadFullName(site_id)}</span>
 					</div>
 					<div className="list-row--buttons">
 						<LinkButtons links={links} />
