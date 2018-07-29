@@ -1,10 +1,13 @@
 export default class Scroll {
 
-  constructor(elementId){
-    console.log(elementId);
-    window.scroll({
-      top: document.getElementById(elementId),
+  constructor(elementId, position){
+    const elm = document.getElementById('content-container');
+    elm.scrollIntoView({
+      block: 'start',
+      inline: "nearest",
       behavior: 'smooth'
     });
+
   }
 }
+

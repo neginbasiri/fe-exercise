@@ -3,7 +3,7 @@ import { Scroll } from '../common';
 
 const Footer = () => {
 
-	const onBackToTopClick = () => new Scroll('content-container');
+	const onBackToTopClick = () => new Scroll();
 
 	return (
 		<div className="container footer">
