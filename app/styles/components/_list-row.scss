@@ -1,14 +1,14 @@
 .list-row {
     display: flex;
     flex-wrap: wrap;
-    padding: $padding-lg 0;
+    padding: $padding-lg;
     border-bottom: 1px solid $border-color;
 }
 
 .list-row--image {
     width: 100px;
     height: 100px;
-    margin-left: $margin-lg;
+    margin-right: $margin-lg;
 }
 
 .list-row--text {
@@ -18,18 +18,17 @@
 }
 
 .list-row--title {
-    padding: 0 $padding-lg;
-    padding-bottom: $padding-md;
+    margin-top: $margin-sm;
     font-size: 16px;
     font-family: 'latobold';
 }
 
-
 .list-row--sub-title {
-    padding: 0 $padding-lg;
+
+    margin-top: $margin-sm;
     color: $grey;
 
-    span{
+    span {
         font-family: 'latobold';
     }
 }
@@ -37,10 +36,10 @@
 .list-row--buttons {
     display: flex;
     flex-wrap: wrap;
-    padding-left: $padding-lg;
-    margin-top: $margin-lg;
 
-    > .button{
-        margin-right: $margin-md;
+     margin-top: $margin-lg;
+
+    > .button {
+        margin: 0 $margin-sm $margin-sm 0;
     }
 }
