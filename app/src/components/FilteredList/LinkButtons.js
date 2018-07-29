@@ -33,7 +33,7 @@ const findButtonText = link => {
 
 const LinkButtons = ({ links }) => {
 	return Object.keys(links).map((link, key) => {
-		if (link === 'mission_patch') return null;
+		if (link === 'mission_patch' || !links[link]) return null;
 
 		return (
 			<a className="button button--link" key={key} href={links[link]}>
