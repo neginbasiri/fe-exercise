@@ -35,29 +35,30 @@ export default class FilteredListContainer extends Component {
 	};
 
 	onInputChange = (filterType, value) => {
+		const { launches } = this.state;
 		let filteredList = [];
 
 		switch (filterType) {
 			case 'keyword':
-				filteredList = this.filterByKeyword(value);
+				filteredList = launches.filter(launch => this.filterByKeyword(launch, value));
 				!value
 					? this.setState({ selectedKeyword: '', filteredList: this.state.launches })
 					: this.setState({ selectedKeyword: value, filteredList });
 				break;
 			case 'launch pad name':
-				filteredList = this.filterByLaunch(value);
+				filteredList = launches.filter(launch => this.filterByLaunch(launch, value));
 				!value
 					? this.setState({ selectedLaunchPad: '', filteredList: this.state.launches })
 					: this.setState({ selectedLaunchPad: value, filteredList });
 				break;
 			case 'min year':
-				filteredList = this.filterByMinYear(value);
+				filteredList = launches.filter(launch => this.filterByMinYear(launch, value));
 				!value
 					? this.setState({ selectedMinYear: '', filteredList: this.state.launches })
 					: this.setState({ selectedMinYear: value, filteredList });
 				break;
 			case 'max year':
-				filteredList = this.filterByMaxYear(value);
+				filteredList = launches.filter(launch => this.filterByMaxYear(launch, value));
 				!value
 					? this.setState({ selectedMaxYear: '', filteredList: this.state.launches })
 					: this.setState({ selectedMaxYear: value, filteredList });
@@ -74,38 +75,35 @@ export default class FilteredListContainer extends Component {
 			alert('Selected year rage is invalid');
 		}
 
-		//launches.reduce();
+		const filteredList = launches
+			.filter(launch => this.filterByKeyword(launch, selectedKeyword))
+			.filter(launch => this.filterByLaunch(launch, selectedLaunchPad))
+			.filter(launch => this.filterByMinYear(launch, selectedMinYear))
+			.filter(launch => this.filterByMaxYear(launch, selectedMaxYear));
 
-
+		this.setState({ filteredList });
 	};
 
-	filterByKeyword = selectedKeyword => {
-		const filteredList = this.state.launches.filter(launch => {
-			const { flight_number, payloads, rocket } = launch;
-			const { rocket_name } = rocket;
-			const payload_id = payloads.length > 0 ? payloads[0].payload_id : null;
+	filterByKeyword = (launch, selectedKeyword) => {
+		const { flight_number, payloads, rocket } = launch;
+		const { rocket_name } = rocket;
+		const payload_id = payloads.length > 0 ? payloads[0].payload_id : null;
 
-			return (
-				rocket_name.includes(selectedKeyword) ||
-				flight_number.toString() === selectedKeyword ||
-				payload_id.includes(selectedKeyword)
-			);
-		});
-
-		return filteredList;
+		return (
+			rocket_name.includes(selectedKeyword) ||
+			flight_number.toString() === selectedKeyword ||
+			payload_id.includes(selectedKeyword)
+		);
 	};
 
-	filterByLaunch = selectedLaunchPad => {
-		const matchedLaunchPads = this.state.launchPads.filter(launchPad => launchPad.full_name === selectedLaunchPad);
+	filterByLaunch = (launch, selectedLaunchPad) => {
+		const { launchPads } = this.state;
+		const matchedLaunchPads = launchPads.filter(launchPad => launchPad.full_name === selectedLaunchPad);
 
-		const filteredList = this.state.launches.filter(launch => {
-			const { launch_site } = launch;
-			const { site_id } = launch_site;
+		const { launch_site } = launch;
+		const { site_id } = launch_site;
 
-			return matchedLaunchPads.find(launchPads => launchPads.id === site_id);
-		});
-
-		return filteredList;
+		return matchedLaunchPads.find(launchPads => launchPads.id === site_id);
 	};
 
 	filterByMinYear = selectedMinYear => {
