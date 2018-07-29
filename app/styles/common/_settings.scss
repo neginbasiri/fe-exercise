@@ -2,16 +2,18 @@ $black: #000;
 $white: #FFF;
 $red: #EC5F7A;
 $green: #1FBBA6;
-$grey-dark: #5A6066;
-$grey: #D5D9DE;
-$grey-light: #EAEDF1;
-$grey-lighter: #F9FAFA;
+$grey-darker: #5A6066;
+$grey-dark: #7B8B8E;
+$grey: #A2ACAE;
+$grey-light: #D5D9DE;
+$grey-lighter: #EAEDF1;
+$grey-lightest: #F9FAFA;
 
-$padding-sm: 5px;
+$padding-sm: 10px;
 $padding-md: 15px;
 $padding-lg: 30px;
 
-$margin-sm: 5px;
+$margin-sm: 10px;
 $margin-md: 15px;
 $margin-lg: 30px;
 
@@ -20,9 +22,9 @@ $base-radius: 2px;
 $base-padding: $padding-md;
 
 
-$body-text-color: $grey-dark;
-$body-bg-color: $grey-light;
-$border-color: $grey;
+$body-text-color: $grey-darker;
+$body-bg-color: $grey-lighter;
+$border-color: $grey-lighter;
 
 $content-width: 1140px;
 $fields-height: 35px;

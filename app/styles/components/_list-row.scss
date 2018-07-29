@@ -1,5 +1,6 @@
 .list-row {
     display: flex;
+
     // flex: 1;
     padding: $padding-lg;
     border-bottom: 1px solid $border-color;
@@ -13,7 +14,7 @@
 .list-row--text {
     display: flex;
     flex-flow: column wrap;
-    padding: $padding-md;
+    padding-left: $padding-lg;
 }
 
 .list-row--title {
@@ -26,6 +27,17 @@
 .list-row--sub-title {
     font-size: 1.4rem;
     line-height: 1.4rem;
+
     $color: $grey;
+
     font-weight: medium;
+}
+
+.list-row--buttons {
+    display: flex;
+    margin-top: $margin-lg;
+
+    > .button{
+        margin-right: $margin-md;
+    }
 }
