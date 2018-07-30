@@ -43,3 +43,15 @@
         margin: 0 $margin-sm $margin-sm 0;
     }
 }
+
+
+@media (max-width: $screen-sm) {
+    .list-row--title,
+    .list-row--sub-title{
+        text-align: center;
+    }
+    .list-row--buttons,
+    .list-row{
+      justify-content: center;
+    }
+  }

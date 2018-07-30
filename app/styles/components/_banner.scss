@@ -6,8 +6,7 @@
   @include background-image-cover;
   @include gradient-overlay(0.5);
   position: relative;
-  background-image: url('../../src/static/space-photo.jpeg');
-  height: 600px;
+  height: 750px; 
 }
 
 .banner--title{
@@ -30,7 +29,6 @@
 }
 
 .banner--icon{
-  background: url('../../src/static/down-chevron.svg') center no-repeat;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -41,5 +39,23 @@
   > img{
     width: 30px;
     fill: $white;
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .banner--image{
+    height: 400px;
+  }
+}
+
+@media (max-width: $screen-md) {
+  .banner--image{
+    height: 500px;
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .banner--image{
+    height: 600px;
   }
 }
